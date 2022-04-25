@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { BrowserRouter, Redirect, Switch } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes as RouterRoutes } from 'react-router-dom'
 
-import { WrappedRoute } from './components/WrappedRoute'
+import { DefaultLayout } from './components/Layout'
 
 import { FrontPage } from './pages/FrontPage'
 import { DevToolsPage } from './pages/DevToolsPage'
@@ -11,13 +11,13 @@ import { NoEditorPage } from './pages/NoEditorPage'
 
 export const Routes = () => (
   <BrowserRouter basename={process.env.PUBLIC_URL}>
-    <Switch>
-      <WrappedRoute exact path="/" component={FrontPage}/>
-      <WrappedRoute exact path="/dev-tools" component={DevToolsPage}/>
-      <WrappedRoute exact path="/plain" component={PlainPMPage}/>
-      <WrappedRoute exact path="/yjs" component={YjsPage}/>
-      <WrappedRoute exact path="/no-editor" component={NoEditorPage}/>
-      <Redirect to="/" />
-    </Switch>
+    <RouterRoutes>
+      <Route path="/" element={<DefaultLayout><FrontPage /></DefaultLayout>}/>
+      <Route path="/dev-tools" element={<DefaultLayout><DevToolsPage /></DefaultLayout>}/>
+      <Route path="/plain" element={<DefaultLayout><PlainPMPage /></DefaultLayout>}/>
+      <Route path="/yjs" element={<DefaultLayout><YjsPage /></DefaultLayout>}/>
+      <Route path="/no-editor" element={<DefaultLayout><NoEditorPage /></DefaultLayout>}/>
+      <Route path="*" element={<Navigate replace to="/" />} />
+    </RouterRoutes>
   </BrowserRouter>
 )

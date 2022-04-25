@@ -11,6 +11,7 @@ import { DevToolsOpts } from './types'
 const DEVTOOLS_CSS_CLASS = '__prosemirror-dev-toolkit__'
 
 // Make the dev tools available globally for testing and other use
+// @ts-ignore
 if (typeof window !== 'undefined') window.applyDevTools = applyDevTools
 
 function createOrFindPlace() {
@@ -50,6 +51,7 @@ export function applyDevTools(view: EditorView, opts: DevToolsOpts = {}) {
     }
   })
   // Also add view to the window for testing and other debugging
+  // @ts-ignore
   if (typeof window !== 'undefined') window.editorView = view
 
   // Bind the component's life-cycle to the editorView to automatically unmount the devTools

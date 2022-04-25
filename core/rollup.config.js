@@ -1,6 +1,7 @@
 import alias from '@rollup/plugin-alias'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
+import ts from '@rollup/plugin-typescript'
 import typescript from 'rollup-plugin-ts'
 import svelte from 'rollup-plugin-svelte'
 import autoPreprocess from 'svelte-preprocess'
@@ -41,6 +42,7 @@ const plugins = [
   // Fun fact: if commonjs() is after typescript() the build fails when _both_ bundles are used.
   // When using just the other bundle eg just running `yarn watch` all goes fine. How nice is that
   commonjs(),
+  // ts(),
   typescript(),
   babel({
     extensions: ['.js', '.mjs', '.html', '.svelte'],

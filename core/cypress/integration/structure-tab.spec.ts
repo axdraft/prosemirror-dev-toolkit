@@ -91,6 +91,7 @@ describe('# Structure tab', () => {
     cy.window().then(window => {
       const { _node } = window
       const spy = window.console.log as Cypress.Agent<Sinon.SinonSpy>
+      // TODO this fails randomly
       const doc = spy.getCall(2).args[0].node.toJSON() || {}
       // The logged node should now have been updated
       expect(JSON.stringify(doc)).to.be.eq(JSON.stringify(snapshot1))
