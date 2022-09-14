@@ -1,10 +1,10 @@
 {
-  "name": "prosemirror-dev-toolkit",
-  "version": "1.0.2",
+  "name": "@axdraft/prosemirror-dev-toolkit",
+  "version": "1.0.5",
   "description": "Injectable dev tools for ProseMirror editors",
   "author": "Teemu Koivisto <teemukoivisto.xyz@gmail.com>",
   "license": "MIT",
-  "homepage": "https://teemukoivisto.github.io/prosemirror-dev-toolkit/",
+  "homepage": "https://github.com/axdraft/prosemirror-dev-toolkit",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -15,10 +15,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TeemuKoivisto/prosemirror-dev-toolkit.git"
+    "url": "git+https://github.com/axdraft/prosemirror-dev-toolkit.git"
   },
   "bugs": {
-    "url": "https://github.com/TeemuKoivisto/prosemirror-dev-toolkit/issues"
+    "url": "https://github.com/axdraft/prosemirror-dev-toolkit/issues"
   },
   "keywords": [
     "prosemirror",
@@ -32,7 +32,6 @@
     "build": "rimraf dist && rollup -c && rm dist/index.d.cts",
     "bundle": "UMD_BUNDLE=true rollup -c && rm dist/bundle.umd.min.d.ts",
     "watch": "rimraf dist && rollup -cw",
-    "preversion": "svelte-check && yarn test",
     "version": "yarn build && yarn bundle",
     "postversion": "git push && git push --tags",
     "prepublishOnly": "cp ../README.md . && cp ../LICENSE .",
