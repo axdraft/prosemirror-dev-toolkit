@@ -1,6 +1,6 @@
 {
   "name": "@axdraft/prosemirror-dev-toolkit",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Injectable dev tools for ProseMirror editors",
   "author": "Teemu Koivisto <teemukoivisto.xyz@gmail.com>",
   "license": "MIT",
@@ -33,7 +33,6 @@
     "bundle": "UMD_BUNDLE=true rollup -c && rm dist/bundle.umd.min.d.ts",
     "watch": "rimraf dist && rollup -cw",
     "version": "yarn build && yarn bundle",
-    "postversion": "git push && git push --tags",
     "prepublishOnly": "cp ../README.md . && cp ../LICENSE .",
     "postpublish": "rm README.md LICENSE",
     "svelte-check": "svelte-check",
