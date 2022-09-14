@@ -1,6 +1,7 @@
 {
   "name": "@axdraft/prosemirror-dev-toolkit",
   "private": true,
+  "name": "prosemirror-dev-toolkit",
   "workspaces": [
     "core",
     "example-app"
